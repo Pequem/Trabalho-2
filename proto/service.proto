@@ -1,0 +1,13 @@
+message Messagem {
+    required string k;
+    optional int32 v;
+}
+
+message PutReply {
+    required bool Success
+}
+
+service Table {
+    rpc put (Messagem m) returns (PutReply) {}
+    rpc get (Messagem m) returns (Messagem) {}
+}
